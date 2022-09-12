@@ -1,0 +1,13 @@
+.first {
+    padding: 20px;
+    text-align: center;
+    background: #13293d;
+    color: #fff; 
+    background-image: linear-gradient(to right, rgb(126, 166, 247) , rgb(5, 3, 58));  
+}
+aside {
+    width: 30%;
+    padding-right: 15px;
+    margin-right: 15px;
+    float: left;
+  }
