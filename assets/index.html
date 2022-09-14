@@ -18,25 +18,30 @@
 
 <aside>
     <h1>Search for a City:</h1>
-    <button>Search</button>
+    <div class = "control">
+<input class="input" id="city-input" type ="text">
+    </div>
+    <button class="btn btn-danger" id="fetch-button">Search</button>
 <!-- Saved Search -->
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h4 class="card-title">Card title</h4>
+            <ul id="cityList"></ul>
         </div>
     </div>
 </aside>
 
 <!-- Current Weather Display -->
         <div class="card" style="width: autovw;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+            <div class="card-body container" id="current">
+                <h5 class="card-title">Current Weather</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>
 
 <!-- Forecasted Weather Display -->
+  <container>
+    <h4>Weather Forecast</h4>
         <div class="card-group">
             <div class="card">
               <div class="card-body">
@@ -69,11 +74,12 @@
               </div>
             </div>
           </div>
+  </container>
     </main>
     <div></div>
     <main></main>
 
 
-    <script src="./assets/js/script.js"></script> 
+    <script src="./js/script.js"></script> 
 </body>
 </html>
