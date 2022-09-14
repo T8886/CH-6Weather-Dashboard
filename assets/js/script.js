@@ -1,17 +1,18 @@
 // https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=2d8be646e815cb01ae7f38129230b591
 
-var cityInput = document.querySelector("#city-input");
+var cityInput = document.querySelector("#cityText");
+var cityForm = document.querySelector("#cityForm");
 var cityList = document.querySelector("#cityList");
 
 var cities = [];
 function renderCities () {
-        cityList.innerHTML = "";
+    cityList.innerHTML = "";
     for (var i = 0; i < cities.length; i++) {
         var city = cities[1];
         var li = document.createElement ("li");
         li.textContent = city;
         li.setAttribute("data-index", i);
-        cityList.appendChild(li);
+    cityList.appendChild(li);
     }
 }
 function init() {
@@ -19,16 +20,18 @@ function init() {
     if (storedCities !== null) {
         cities = storedCities;
       }
-render();   
-
+renderCities();   
+    }
 function storeCities() {
 localStorage.setItem("cities", JSON.stringify(cities));
 }
+//Need help with Button
+var element = document.getElementById("Btn");
 cityForm.addEventListener("submit", function(event) {
     event.preventDefault();
     
 var cityText = cityInput.value.trim();
-if (todoText === "") {
+if (cityText === "") {
     return;
     }
     cities.push(cityText);
@@ -41,7 +44,7 @@ renderCities();
         var element = event.target;
         if (element.matches("button") === true) {
             var index = element.parentElement.getAttribute("data-index");
-            todos.splice(index, 1);
+            cities.splice(index, 1);
             storeCities();
             renderCities();
         }
