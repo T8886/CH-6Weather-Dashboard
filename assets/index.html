@@ -17,17 +17,18 @@
     <main>
 
 <aside>
-    <h1>Search for a City:</h1>
+    <!-- <h1>Search for a City:</h1>
     <div class = "control">
 <input class="input" id="city-input" type ="text">
     </div>
-    <button class="btn btn-danger" id="fetch-button">Search</button>
+    <button class="btn btn-danger" id="fetch-button">Search</button> -->
 <!-- Saved Search -->
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Card titles</h4>
+    <div class="card card-body">
+      <form id="cityForm" method="POST">        
+        <label for="cityText">Search for a city: </label>
+        <input type="text" placeholder="Enter City" name="cityText" id="cityText" />
+      </form>
             <ul id="cityList"></ul>
-        </div>
     </div>
 </aside>
 

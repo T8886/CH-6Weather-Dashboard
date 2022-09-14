@@ -19,13 +19,33 @@ function init() {
     if (storedCities !== null) {
         cities = storedCities;
       }
-renderz();   
+render();   
+
 function storeCities() {
 localStorage.setItem("cities", JSON.stringify(cities));
 }
-
-storedCities();
+cityForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+var cityText = cityInput.value.trim();
+if (todoText === "") {
+    return;
     }
+    cities.push(cityText);
+    cityInput.value = "";
+  
+storeCities();
+renderCities();
+    });
+    cityList.addEventListener("click", function(event) {
+        var element = event.target;
+        if (element.matches("button") === true) {
+            var index = element.parentElement.getAttribute("data-index");
+            todos.splice(index, 1);
+            storeCities();
+            renderCities();
+        }
+        });
 init()
 
 
